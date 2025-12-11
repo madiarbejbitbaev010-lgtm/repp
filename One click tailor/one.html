@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Click Tailor</title>
+<link rel="stylesheet" href="one.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <div class="logo">One Click Tailor</div>
+    <nav>
+        <a href="On.html" class="download-btn">О нас</a>
+        <a href="pr.html" class="download-btn">Установить приложения</a>
+    </nav>
+</header>
+
+<main>
+   
+    <div class="card" id="main-screen">
+        <h1>Главный экран</h1>
+        <button class="blue-btn" onclick="showScreen('measure-screen')">
+            <i class="fas fa-ruler"></i> Создать лекало
+        </button>
+        <button class="green-btn" onclick="showScreen('manual-measure-screen')">
+            <i class="fas fa-tape"></i> Добавить мерки вручную
+        </button>
+        <button class="orange-btn" onclick="showScreen('clothes-screen')">
+            <i class="fas fa-hanger"></i> Выбрать модель одежды
+        </button>
+        <p>Ваш персональный портной в один клик.</p>
+    </div>
+
+  
+    <div class="card screen" id="measure-screen">
+        <div class="form-container">
+            <form id="measure-form">
+                <label>Обхват груди: <input type="number" name="chest"></label>
+                <label>Обхват талии: <input type="number" name="waist"></label>
+                <label>Обхват бедер: <input type="number" name="hips"></label>
+                <label>Рост: <input type="number" name="height"></label>
+                <label>Длина изделия: <input type="number" name="length"></label>
+                <button type="button" class="red-btn" onclick="generatePattern()">Сгенерировать лекало</button>
+            </form>
+            <div class="preview" id="preview">
+                <p>Здесь будет ваш результат</p>
+                <img id="clothing-image" src="" alt="" style="display:none;">
+            </div>
+        </div>
+        <button class="back-btn" onclick="showScreen('main-screen')">Назад</button>
+    </div>
+
+   
+    <div class="card screen" id="clothes-screen">
+        <h2>Выберите одежду</h2>
+        <div class="clothes-options">
+            <button onclick="selectClothing('dress')" class="f">Платье</button>
+            <button onclick="selectClothing('uniform')" class="ff">Форма</button>
+            <button onclick="selectClothing('hoodie')" class="fff">Худи</button>
+            <button onclick="selectClothing('jacket')" class="ffff">Пиджак</button>
+        </div>
+        <div class="preview" id="clothes-preview">
+            <p>Выбранная одежда появится здесь</p>
+            <img id="clothes-image" src="Dos.png" alt="" style="display:none;">
+        </div>
+        <button class="back-btn" onclick="showScreen('main-screen')">Назад</button>
+    </div>
+</main>
+<div class="lang-switch" onclick="toggleLang()">
+    <span id="lang-kz" class="active"><a href="onekz.html">KAZ</a></span> 
+    <span id="lang-ru"><a href="#">RUS</a></span>
+</div>
+
+
+<script src="one.js"></script>
+</body>
+</html>
